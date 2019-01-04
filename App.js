@@ -15,7 +15,7 @@ class WeatherApp extends Component {
     }
   }
 
-  _getForecast(zipcode)
+  _getForecast(city)
   {
     const request_url = "http://api.openweathermap.org/data/2.5/forecast?id=524901&APPID=6e6b8fd7122d6e611ee00b5947836165" + "/forecast/q/" + city + ".json";
     axios.get(request_url).then( (response) => {
@@ -58,7 +58,7 @@ class WeatherApp extends Component {
   render() {
     if (this.state.days.length <= 0)
     {
-      this._getForecast(this.state.zipcode)
+      this._getForecast(this.state.city)
     }
     return (
       <View style={styles.container}>
