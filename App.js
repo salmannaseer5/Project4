@@ -1,12 +1,12 @@
 import React, {Component} from 'react';
 import {StyleSheet, Text, View, Image, StatusBar, Dimensions} from 'react-native';
-import axios from axios;
+import axios from 'axios';
 
 
 const API_KEY = '6e6b8fd7122d6e611ee00b5947836165';
 const DEFAULT_ZIPCODE = 20002;
 
-class TheWeatherApp extends Component {
+class WeatherApp extends Component {
   constructor(){
     super();
     this.state = {
@@ -17,7 +17,7 @@ class TheWeatherApp extends Component {
 
   _getForecast(zipcode)
   {
-    const request_url = "https://home.openweathermap.org/api_keys" + API_KEY + "/forecast/q/" + zipcode + ".json";
+    const request_url = "http://api.openweathermap.org/data/2.5/forecast?id=524901&APPID=6e6b8fd7122d6e611ee00b5947836165" + "/forecast/q/" + zipcode + ".json";
     axios.get(request_url).then( (response) => {
       if(response.status == 200 ) {
         var weather = response.data.forecast.simpleforcast.forecastday;
