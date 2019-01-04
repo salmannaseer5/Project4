@@ -3,8 +3,7 @@ import {StyleSheet, Text, View} from 'react-native';
 import Header from './src/components/Header'
 
 
-type Props = {};
-export default class App extends Component<Props> {
+class App extends Component {
   render() {
     return (
       
@@ -16,6 +15,8 @@ export default class App extends Component<Props> {
     );
   }
 }
+
+export default App
 
 const styles = StyleSheet.create({
   container: {
