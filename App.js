@@ -16,7 +16,7 @@ class App extends Component {
   }
 }
 
-export default App
+export default App;
 
 const styles = StyleSheet.create({
   container: {
