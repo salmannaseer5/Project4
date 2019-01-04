@@ -4,20 +4,20 @@ import axios from 'axios';
 
 
 const API_KEY = '6e6b8fd7122d6e611ee00b5947836165';
-const DEFAULT_ZIPCODE = 20002;
+const DEFAULT_CITY = 'washington';
 
 class WeatherApp extends Component {
   constructor(){
     super();
     this.state = {
-      zipcode: DEFAULT_ZIPCODE,
+      city: DEFAULT_CITY,
       days: [],
     }
   }
 
   _getForecast(zipcode)
   {
-    const request_url = "http://api.openweathermap.org/data/2.5/forecast?id=524901&APPID=6e6b8fd7122d6e611ee00b5947836165" + "/forecast/q/" + zipcode + ".json";
+    const request_url = "http://api.openweathermap.org/data/2.5/forecast?id=524901&APPID=6e6b8fd7122d6e611ee00b5947836165" + "/forecast/q/" + city + ".json";
     axios.get(request_url).then( (response) => {
       if(response.status == 200 ) {
         var weather = response.data.forecast.simpleforcast.forecastday;
